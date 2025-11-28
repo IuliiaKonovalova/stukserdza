@@ -352,6 +352,16 @@ section.alt .section-title {
     background: var(--black);
 }
 
+.social-card:hover {
+    /* transform: translateY(-2px); */
+    /* Slight lift */
+    box-shadow:
+        0 8px 25px rgba(255, 201, 9, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.3);
+    border-color: var(--gold);
+    background: rgba(255, 201, 9, 0.05);
+}
+
 .social-icon {
     width: 32px;
     height: 32px;
