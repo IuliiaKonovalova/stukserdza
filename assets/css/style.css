@@ -302,13 +302,35 @@ section.alt .section-title {
     color: var(--gold);
 }
 
+/* Базово: одна колонка на мобильном */
 .testimonials-wrapper {
-    max-width: 640px;
+    max-width: 960px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    /* расстояние между карточками */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+/* Планшет/десктоп: 2 колонки + центрирование 5‑й */
+@media (min-width: 768px) {
+    .testimonials-wrapper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Убираем любые прошлые transform для карточек */
+    .testimonial-card {
+        transform: none;
+    }
+
+    /* Центрируем 5‑ю (последнюю) карточку —
+       она будет занимать всю строку и по ширине сжиматься до 60% */
+    /* .testimonial-card:nth-child(5) { */
+    /* grid-column: 1 / -1; */
+    /* занять всю строку */
+    /* max-width: 60%;
+        justify-self: center; */
+    /* центрировать по сетке */
+    /* } */
 }
 
 .testimonial-card {
@@ -317,6 +339,16 @@ section.alt .section-title {
     padding: 20px 20px 18px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    border-color: rgba(255, 201, 9, 0.5);
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.4),
+        0 0 18px rgba(255, 201, 9, 0.16);
+    transform: translateY(-3px);
 }
 
 .testimonial-card::before {
