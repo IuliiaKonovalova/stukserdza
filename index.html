@@ -37,7 +37,14 @@
     <header>
         <div class="container header-inner">
             <div class="logo">Стук сердца</div>
-            <nav>
+
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="mobile-menu">
                 <ul>
                     <li><a href="#about">Обо мне</a></li>
                     <li><a href="#services">Формат работы</a></li>
@@ -340,7 +347,15 @@
                 } // End if
             });
         });
+        $(document).ready(function () {
+            $(".hamburger").click(function () {
+                $("nav").toggleClass("active");
+                const expanded = $(this).attr("aria-expanded") === "true";
+                $(this).attr("aria-expanded", !expanded);
+            });
+        });
     </script>
+
 </body>
 
 </html>
