@@ -97,6 +97,52 @@ nav a:hover {
     color: var(--gold);
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: auto;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+}
+
+/* Show hamburger button on small screens */
+@media (max-width: 900px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        /* Keep default for nav ul hidden */
+        flex-direction: column;
+        gap: 12px;
+        background: var(--black);
+        padding: 16px;
+        position: absolute;
+        top: 60px;
+        right: 1em;
+        border-radius: 8px;
+        border: 1px solid var(--gold);
+        width: 180px;
+        z-index: 20;
+    }
+
+    nav.active ul {
+        display: flex;
+    }
+}
+
 .hero {
     background: radial-gradient(circle at top left, #5b1111 0, var(--deep-red) 40%, var(--black) 100%);
     color: var(--white);
