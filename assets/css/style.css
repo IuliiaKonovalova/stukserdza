@@ -286,6 +286,19 @@ section.alt .section-title {
     font-size: 0.98rem;
 }
 
+.about-photo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.about-photo {
+    width: 50%;
+    border-radius: 12px;
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.4),
+        0 4px 12px rgba(255, 201, 9, 0.2);
+}
+
 .quote-box {
     margin-top: 12px;
     padding: 14px 16px;
